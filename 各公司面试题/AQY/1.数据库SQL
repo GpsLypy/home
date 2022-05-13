@@ -1,0 +1,80 @@
+/*
+女生数量最多的专业名称和对应的女生人数
+时间限制： 3000MS
+内存限制： 589824KB
+题目描述：
+现有如下MySQL数据表，
+请写出合适的SQL语句，查询出女生数量最多的前三个专业名称和对应的女生人数？
+（gender字段说明：1为男，2为女）。要求查询结果的表头如subject_name, girl_count。
+
+大学学生基本信息表Student_Info
+id	name	gender
+1	Kate	2
+2	Mary	2
+3	Tom	    1
+4	Jim	    1
+5	Lily	2
+6	Rose	2
+7	Lucy	2
+8	Meimei	2
+
+专业信息登记表Subject_Register
+student_id	 subject_id
+1	            1
+2	            2
+3	            3
+4	            3
+5	            2
+6	            4
+7	            4
+8	            4
+
+专业基本信息表Subject_Info
+id	name
+1	Math
+2	English
+3	Computer
+4	News
+
+
+输入描述
+MySQL数据表
+
+输出描述
+查询出女生数量最多的前三个专业名称和对应的女生人数, 要求查询结果的表头如subject_name, girl_count
+
+
+样例输入
+create table Student_Info(id int primary key not null,  name varchar(30),  gender int);
+insert into Student_Info(id,name,gender) values(1,'Kate',2);
+insert into Student_Info(id,name,gender) values(2,'Mary',2);
+insert into Student_Info(id,name,gender) values(3,'Tom',1);
+insert into Student_Info(id,name,gender) values(4,'Jim',1);
+insert into Student_Info(id,name,gender) values(5,'Lily',2);
+insert into Student_Info(id,name,gender) values(6,'Rose',2);
+insert into Student_Info(id,name,gender) values(7,'Lucy',2);
+insert into Student_Info(id,name,gender) values(8,'Meimei',2);
+
+create table Subject_Register(student_id int primary key not null,  subject_id int);
+insert into Subject_Register(student_id,subject_id) values(1, 1);
+insert into Subject_Register(student_id,subject_id) values(2, 2);
+insert into Subject_Register(student_id,subject_id) values(3, 3);
+insert into Subject_Register(student_id,subject_id) values(4, 3);
+insert into Subject_Register(student_id,subject_id) values(5, 2);
+insert into Subject_Register(student_id,subject_id) values(6, 4);
+insert into Subject_Register(student_id,subject_id) values(7, 4);
+insert into Subject_Register(student_id,subject_id) values(8, 4);
+
+create table Subject_Info(id int primary key not null,  name varchar(30));
+insert into Subject_Info(id,name) values(1, 'Math');
+insert into Subject_Info(id,name) values(2, 'English');
+insert into Subject_Info(id,name) values(3, 'Computer');
+insert into Subject_Info(id,name) values(4, 'News');
+样例输出
+News	3
+English	2
+Math	1
+
+*/
+
+
